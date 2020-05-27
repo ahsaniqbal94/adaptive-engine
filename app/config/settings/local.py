@@ -6,7 +6,7 @@ INSTALLED_APPS += [
     'django_extensions',
 ]
 
-ALLOWED_HOSTS += ['localhost', 'engine']
+ALLOWED_HOSTS += ['localhost', 'engine', 'engine.lms','bridge']
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases

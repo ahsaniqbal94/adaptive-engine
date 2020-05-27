@@ -5,7 +5,9 @@ services:
   postgres:
     image: postgres
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: engine
     volumes:
       - pgdata:/var/lib/postgresql/data/
     ports:
@@ -22,6 +24,17 @@ services:
       - "8000:8000"
     links:
       - postgres
+    networks:
+      devstack_default:
+        aliases: 
+          - engine
+          - engine.lms
+      default:
 
 volumes:
   pgdata:
+
+networks:
+  devstack_default:
+    external: true
+  default:
